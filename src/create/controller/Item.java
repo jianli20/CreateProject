@@ -4,13 +4,13 @@ public class Item
 {
 	public double itemPrice;
 	public String itemName;
-	public int itemIdentifier;
+	public int itemAmount;
 	
-	public Item(double itemPrice, String itemName, int itemIdentifier)
+	public Item(double itemPrice, String itemName, int itemAmount)
 	{
 		this.itemPrice = itemPrice;
 		this.itemName = itemName;
-		this.itemIdentifier = itemIdentifier;		
+		this.itemAmount = itemAmount;		
 	}
 	
 	//Getters
@@ -24,9 +24,9 @@ public class Item
 		return itemName;
 	}
 	
-	int getItemIdentifier()
+	int getItemAmount()
 	{
-		return itemIdentifier;
+		return itemAmount;
 	}
 	
 }

@@ -13,6 +13,7 @@ public class CreatePanel extends JPanel
 	private SpringLayout appLayout;
 	
 	private JTextField nameField;
+	private JTextField priceField;
 	private JTextField drinkField;
 	private JTextField totalField;
 	
@@ -34,6 +35,7 @@ public class CreatePanel extends JPanel
 		this.appController = appController;
 		
 		nameField = new JTextField();
+		priceField = new JTextField();
 		drinkField = new JTextField();
 		totalField = new JTextField();
 		
@@ -55,6 +57,7 @@ public class CreatePanel extends JPanel
 	private void setupPanel()
 	{
 		this.add(nameField);
+		this.add(priceField);
 		this.add(drinkField);
 		this.add(totalField);
 		
