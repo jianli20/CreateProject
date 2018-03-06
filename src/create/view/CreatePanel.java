@@ -33,6 +33,7 @@ public class CreatePanel extends JPanel
 	{
 		super();
 		this.appController = appController;
+		this.appLayout = new SpringLayout();
 		
 		nameField = new JTextField();
 		priceField = new JTextField();
@@ -40,14 +41,8 @@ public class CreatePanel extends JPanel
 		totalField = new JTextField();
 		
 		hamburgerButton = new JButton("Hamburger");
-		cheeseburgerButton = new JButton("CheeseBurger");
+		cheeseburgerButton = new JButton("Cheeseburger");
 		wrapButton = new JButton("Wrap");
-		saladButton = new JButton("Salad");
-		friesButton = new JButton("Fries");
-		soupButton = new JButton("Soup");
-		cokeButton = new JButton("Coke");
-		spriteButton = new JButton("Sprite");
-		coffeeButton = new JButton("Coffee");
 		
 		setupPanel();
 		setupLayout();
@@ -56,6 +51,8 @@ public class CreatePanel extends JPanel
 	
 	private void setupPanel()
 	{
+		this.setLayout(appLayout);
+		
 		this.add(nameField);
 		this.add(priceField);
 		this.add(drinkField);
@@ -64,12 +61,18 @@ public class CreatePanel extends JPanel
 		this.add(hamburgerButton);
 		this.add(cheeseburgerButton);
 		this.add(wrapButton);
-		this.add(saladButton);
-		this.add(friesButton);
-		this.add(soupButton);
-		this.add(cokeButton);
+		spriteButton = new JButton("Sprite");
 		this.add(spriteButton);
+		coffeeButton = new JButton("Coffee");
 		this.add(coffeeButton);
+		cokeButton = new JButton("Coke");
+		this.add(cokeButton);
+		friesButton = new JButton("Fries");
+		this.add(friesButton);
+		saladButton = new JButton("Salad");
+		this.add(saladButton);
+		soupButton = new JButton("Soup");
+		this.add(soupButton);
 	}
 	
 	private void setupLayout()
