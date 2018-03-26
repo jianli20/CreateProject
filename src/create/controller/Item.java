@@ -28,23 +28,23 @@ public class Item
 	void buildMain()
 	
 	{
-		mainList.add(4.99 ,"Hamburger");
-		mainList.add(5.49, "Cheeseburger");
-		mainList.add(3.99, "Wrap");
+		mainList.add(new Item(4.99 ,"Hamburger"));
+		mainList.add(new Item(5.49, "Cheeseburger"));
+		mainList.add(new Item(3.99, "Wrap"));
 	}
 	
 	void buildSide()
 	{
-		sideList.add(2.99, "Fries");
-		sideList.add(1.49, "Salad");
-		sideList.add(2.99, "Soup");
+		sideList.add(new Item(2.99, "Fries"));
+		sideList.add(new Item(1.49, "Salad"));
+		sideList.add(new Item(2.99, "Soup"));
 	}
 	
 	void buildDrink()
 	{
-		drinkList.add(2.00, "Coke");
-		drinkList.add(2.00, "Sprite");
-		drinkList.add(1.49, "Coffee");
+		drinkList.add(new Item(2.00, "Coke"));
+		drinkList.add(new Item(2.00, "Sprite"));
+		drinkList.add(new Item(1.49, "Coffee"));
 	}
 	
 	
