@@ -36,13 +36,30 @@ public class CreatePanel extends JPanel
 		this.appLayout = new SpringLayout();
 		
 		nameField = new JTextField();
+		appLayout.putConstraint(SpringLayout.NORTH, nameField, 10, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, nameField, 20, SpringLayout.WEST, this);
 		priceField = new JTextField();
+		appLayout.putConstraint(SpringLayout.NORTH, priceField, 97, SpringLayout.NORTH, this);
 		drinkField = new JTextField();
-		totalField = new JTextField();
+		appLayout.putConstraint(SpringLayout.NORTH, drinkField, 184, SpringLayout.SOUTH, nameField);
+		appLayout.putConstraint(SpringLayout.WEST, nameField, 0, SpringLayout.WEST, drinkField);
+		appLayout.putConstraint(SpringLayout.WEST, drinkField, 10, SpringLayout.WEST, this);
 		
+		totalField = new JTextField();
+		appLayout.putConstraint(SpringLayout.WEST, totalField, 157, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, totalField, -78, SpringLayout.SOUTH, this);
+		
+
 		hamburgerButton = new JButton("Hamburger");
+		appLayout.putConstraint(SpringLayout.SOUTH, hamburgerButton, -419, SpringLayout.SOUTH, this);
 		cheeseburgerButton = new JButton("Cheeseburger");
+		appLayout.putConstraint(SpringLayout.WEST, cheeseburgerButton, 25, SpringLayout.EAST, hamburgerButton);
+		appLayout.putConstraint(SpringLayout.SOUTH, cheeseburgerButton, -419, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.NORTH, hamburgerButton, 0, SpringLayout.NORTH, cheeseburgerButton);
+		appLayout.putConstraint(SpringLayout.NORTH, cheeseburgerButton, 33, SpringLayout.NORTH, this);
 		wrapButton = new JButton("Wrap");
+		appLayout.putConstraint(SpringLayout.EAST, cheeseburgerButton, -25, SpringLayout.WEST, wrapButton);
+		appLayout.putConstraint(SpringLayout.WEST, wrapButton, 604, SpringLayout.WEST, this);
 
 		
 
@@ -70,23 +87,24 @@ public class CreatePanel extends JPanel
 		
 		this.add(coffeeButton);
 		cokeButton = new JButton("Coke");
+		appLayout.putConstraint(SpringLayout.WEST, cokeButton, 319, SpringLayout.EAST, drinkField);
+		appLayout.putConstraint(SpringLayout.EAST, cokeButton, -25, SpringLayout.WEST, spriteButton);
 		appLayout.putConstraint(SpringLayout.NORTH, spriteButton, 0, SpringLayout.NORTH, cokeButton);
 		appLayout.putConstraint(SpringLayout.SOUTH, spriteButton, 0, SpringLayout.SOUTH, cokeButton);
 		appLayout.putConstraint(SpringLayout.SOUTH, cokeButton, -278, SpringLayout.SOUTH, this);
-		appLayout.putConstraint(SpringLayout.EAST, cokeButton, 0, SpringLayout.EAST, hamburgerButton);
 		this.add(cokeButton);
 		friesButton = new JButton("Fries");
-		appLayout.putConstraint(SpringLayout.NORTH, cokeButton, 35, SpringLayout.SOUTH, friesButton);
-		appLayout.putConstraint(SpringLayout.WEST, cokeButton, 0, SpringLayout.WEST, friesButton);
+		appLayout.putConstraint(SpringLayout.NORTH, friesButton, 120, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.WEST, friesButton, 339, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.SOUTH, friesButton, -355, SpringLayout.SOUTH, this);
-		appLayout.putConstraint(SpringLayout.EAST, friesButton, 0, SpringLayout.EAST, hamburgerButton);
-		appLayout.putConstraint(SpringLayout.NORTH, friesButton, 35, SpringLayout.SOUTH, hamburgerButton);
-		appLayout.putConstraint(SpringLayout.WEST, friesButton, 0, SpringLayout.WEST, hamburgerButton);
+		appLayout.putConstraint(SpringLayout.NORTH, cokeButton, 45, SpringLayout.SOUTH, friesButton);
+		appLayout.putConstraint(SpringLayout.EAST, priceField, -162, SpringLayout.WEST, friesButton);
 		this.add(friesButton);
 		saladButton = new JButton("Salad");
+		appLayout.putConstraint(SpringLayout.NORTH, saladButton, 120, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, friesButton, -25, SpringLayout.WEST, saladButton);
 		appLayout.putConstraint(SpringLayout.WEST, spriteButton, 0, SpringLayout.WEST, saladButton);
 		appLayout.putConstraint(SpringLayout.EAST, spriteButton, 0, SpringLayout.EAST, saladButton);
-		appLayout.putConstraint(SpringLayout.NORTH, saladButton, 0, SpringLayout.NORTH, friesButton);
 		appLayout.putConstraint(SpringLayout.WEST, saladButton, 0, SpringLayout.WEST, cheeseburgerButton);
 		appLayout.putConstraint(SpringLayout.SOUTH, saladButton, 0, SpringLayout.SOUTH, friesButton);
 		appLayout.putConstraint(SpringLayout.EAST, saladButton, 0, SpringLayout.EAST, cheeseburgerButton);
@@ -103,25 +121,9 @@ public class CreatePanel extends JPanel
 	
 	private void setupLayout()
 	{
-		appLayout.putConstraint(SpringLayout.WEST, nameField, 10, SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.EAST, nameField, 85, SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.NORTH, priceField, 0, SpringLayout.NORTH, nameField);
-		appLayout.putConstraint(SpringLayout.WEST, priceField, 78, SpringLayout.EAST, nameField);
-		appLayout.putConstraint(SpringLayout.EAST, priceField, 153, SpringLayout.EAST, nameField);
-		appLayout.putConstraint(SpringLayout.NORTH, totalField, 0, SpringLayout.NORTH, drinkField);
-		appLayout.putConstraint(SpringLayout.WEST, totalField, 0, SpringLayout.WEST, priceField);
-		appLayout.putConstraint(SpringLayout.EAST, totalField, 0, SpringLayout.EAST, priceField);
-		appLayout.putConstraint(SpringLayout.NORTH, nameField, 6, SpringLayout.NORTH, hamburgerButton);
-		appLayout.putConstraint(SpringLayout.NORTH, hamburgerButton, 33, SpringLayout.NORTH, this);
 		appLayout.putConstraint(SpringLayout.WEST, hamburgerButton, 339, SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.SOUTH, hamburgerButton, 73, SpringLayout.NORTH, this);
 		appLayout.putConstraint(SpringLayout.EAST, hamburgerButton, 446, SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.NORTH, cheeseburgerButton, 0, SpringLayout.NORTH, hamburgerButton);
-		appLayout.putConstraint(SpringLayout.WEST, cheeseburgerButton, 25, SpringLayout.EAST, hamburgerButton);
-		appLayout.putConstraint(SpringLayout.SOUTH, cheeseburgerButton, 0, SpringLayout.SOUTH, hamburgerButton);
-		appLayout.putConstraint(SpringLayout.EAST, cheeseburgerButton, -142, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.NORTH, wrapButton, 0, SpringLayout.NORTH, cheeseburgerButton);
-		appLayout.putConstraint(SpringLayout.WEST, wrapButton, 25, SpringLayout.EAST, cheeseburgerButton);
 		appLayout.putConstraint(SpringLayout.SOUTH, wrapButton, 0, SpringLayout.SOUTH, cheeseburgerButton);
 		appLayout.putConstraint(SpringLayout.EAST, wrapButton, -10, SpringLayout.EAST, this);
 		
@@ -187,6 +189,7 @@ public class CreatePanel extends JPanel
 				String currentName = drinkField.getText();
 				String currentPrice = priceField.getText();
 				drinkField.setText(currentName + "\n" + "Sprite");
+				
 				
 			}
 		});

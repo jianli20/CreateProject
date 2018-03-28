@@ -6,7 +6,6 @@ import create.controller.Item;
 
 public class CreateController
 {
-	private CreateController appController;
 	private CreateFrame appFrame;
 	private Item appItem;
 
@@ -17,7 +16,6 @@ public class CreateController
 	
 	public CreateController()
 	{
-		appController = new CreateController();
 		appFrame = new CreateFrame(this);
 		appItem = new Item(0.0, "");
 		
