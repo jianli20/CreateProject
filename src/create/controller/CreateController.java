@@ -7,7 +7,7 @@ import create.controller.Item;
 public class CreateController
 {
 	private CreateFrame appFrame;
-	private Item appItem;
+	private Item item;
 
 	public void start()
 	{
@@ -17,10 +17,14 @@ public class CreateController
 	public CreateController()
 	{
 		appFrame = new CreateFrame(this);
-		appItem = new Item(0.0, "");
-		
-		
+		item = new Item(0.0, "");
 	}	
+	
+	private int addTotal(Item mainList, Item sideList, Item drinkList)
+	{
+		int total = 0;
+		return total;
+	}
 }
 
 
