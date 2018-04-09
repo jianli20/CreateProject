@@ -8,7 +8,9 @@ public class CreateController
 {
 	private CreateFrame appFrame;
 	private Item item;
-
+	double total = 0;
+	
+	
 	public void start()
 	{
 	
@@ -20,9 +22,21 @@ public class CreateController
 		item = new Item(0.0, "");
 	}	
 	
-	private int addTotal(Item mainList, Item sideList, Item drinkList)
+	public double boughtItems()
 	{
-		int total = 0;
+		double boughtItems = 0;
+		
+		boughtItems += item.getItemPrice();
+		
+		return boughtItems;
+	}
+	
+	public double addTotal()
+	{
+		total += boughtItems();
+		
+		
+		
 		return total;
 	}
 }
