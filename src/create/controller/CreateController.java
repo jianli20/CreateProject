@@ -8,7 +8,7 @@ public class CreateController
 {
 	private CreateFrame appFrame;
 	private Item item;
-	double total = 0;
+	public double total = 0;
 	
 	
 	public void start()
@@ -22,18 +22,18 @@ public class CreateController
 		item = new Item(0.0, "");
 	}	
 	
-	public double boughtItems()
-	{
-		double boughtItems = 0;
-		
-		boughtItems += item.getItemPrice();
-		
-		return boughtItems;
-	}
+//	public double boughtItems()
+//	{
+//		double boughtItems = 0;
+//		
+//		boughtItems += item.getItemPrice();
+//		
+//		return boughtItems;
+//	}
 	
-	public double addTotal()
+	public double addTotal(String itemName)
 	{
-		total += boughtItems();
+		total = item.retrieveItemPrice(itemName);
 		
 		
 		

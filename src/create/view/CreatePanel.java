@@ -1,6 +1,7 @@
 package create.view;
 
 import create.controller.CreateController;
+import create.controller.Item;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,6 +27,8 @@ public class CreatePanel extends JPanel
 	private JButton cokeButton;
 	private JButton spriteButton;
 	private JButton coffeeButton;
+	
+	private double totalPrice;
 
 
 
@@ -34,6 +37,7 @@ public class CreatePanel extends JPanel
 		super();
 		this.appController = appController;
 		this.appLayout = new SpringLayout();
+		totalPrice = 0.0;
 		
 		nameField = new JTextField();
 		appLayout.putConstraint(SpringLayout.NORTH, nameField, 10, SpringLayout.NORTH, this);
@@ -50,10 +54,10 @@ public class CreatePanel extends JPanel
 		appLayout.putConstraint(SpringLayout.WEST, drinkField, 10, SpringLayout.WEST, this);
 		
 		totalField = new JTextField();
-		appLayout.putConstraint(SpringLayout.EAST, priceField, 6, SpringLayout.EAST, totalField);
+		appLayout.putConstraint(SpringLayout.NORTH, totalField, -105, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, totalField, -60, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, totalField, -426, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.WEST, totalField, 167, SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.SOUTH, totalField, -79, SpringLayout.SOUTH, this);
-		appLayout.putConstraint(SpringLayout.EAST, totalField, -462, SpringLayout.EAST, this);
 		
 
 		hamburgerButton = new JButton("Hamburger");
@@ -93,6 +97,7 @@ public class CreatePanel extends JPanel
 		
 		this.add(coffeeButton);
 		cokeButton = new JButton("Coke");
+		appLayout.putConstraint(SpringLayout.EAST, priceField, -74, SpringLayout.WEST, cokeButton);
 		appLayout.putConstraint(SpringLayout.WEST, cokeButton, 172, SpringLayout.EAST, nameField);
 		appLayout.putConstraint(SpringLayout.EAST, cokeButton, -25, SpringLayout.WEST, spriteButton);
 		appLayout.putConstraint(SpringLayout.NORTH, spriteButton, 0, SpringLayout.NORTH, cokeButton);
@@ -192,8 +197,9 @@ public class CreatePanel extends JPanel
 			public void actionPerformed(ActionEvent click)
 			{
 				String currentName = drinkField.getText();
-				String currentPrice = priceField.getText();
-				drinkField.setText(currentName + "\n" + "Sprite");
+				drinkField.setText(currentName + "\n" + "Sprite" + "\n");
+				totalPrice += appController.addTotal("Sprite");
+				totalField.setText(totalPrice + "");
 				
 				
 			}
