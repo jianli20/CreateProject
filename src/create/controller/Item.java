@@ -1,13 +1,16 @@
 package create.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Item
 {
 	private List<Item> mainList;
 	private List<Item> sideList;
 	private List<Item> drinkList;
+	public static Map<String, Double> menu = new HashMap<String,Double>();
 	public double itemPrice;
 	public String itemName;
 	public int itemAmount;
@@ -23,6 +26,7 @@ public class Item
 		buildMain();
 		buildSide();
 		buildDrink();
+		buildMenu();
 	}
 	
 	void buildMain()
@@ -47,7 +51,18 @@ public class Item
 		drinkList.add(new Item(1.49, "Coffee"));
 	}
 	
-	
+	void buildMenu()
+	{
+		menu.put("Hamburger", 4.99);
+		menu.put("Cheeseburger", 5.49);
+		menu.put("Wrap", 3.99);
+		menu.put("Fries", 2.99);
+		menu.put("Salad", 1.49);
+		menu.put("Soup", 2.99);
+		menu.put("Coke", 2.00);
+		menu.put("Sprite", 2.00);
+		menu.put("Coffee", 1.49);
+	}
 	//Getters
 	double retrieveItemPrice(String itemName)
 	{
