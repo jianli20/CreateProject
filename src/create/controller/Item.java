@@ -49,6 +49,35 @@ public class Item
 	
 	
 	//Getters
+	double retrieveItemPrice(String itemName)
+	{
+		for (int i = 0; i < mainList.size(); i++)
+		{
+			if(mainList.get(i).getItemName().equals(itemName))
+			{
+				return mainList.get(i).getItemPrice();
+			}
+		}
+		
+		for (int i = 0; i < sideList.size(); i++)
+		{
+			if(sideList.get(i).getItemName().equals(itemName))
+			{
+				return sideList.get(i).getItemPrice();
+			}
+		}
+		
+		for (int i = 0; i < drinkList.size(); i++)
+		{
+			if(drinkList.get(i).getItemName().equals(itemName))
+			{
+				return drinkList.get(i).getItemPrice();
+			}
+		}
+		
+		return 0.0;
+	}
+	
 	double getItemPrice()
 	{
 		return itemPrice;
