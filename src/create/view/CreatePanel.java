@@ -199,7 +199,7 @@ public class CreatePanel extends JPanel
 				String currentName = drinkField.getText();
 				drinkField.setText(currentName + "\n" + "Sprite" + "\n");
 				totalPrice += appController.addTotal("Sprite");
-				totalField.setText(totalPrice + "");
+				totalField.setText("" + Item.menu.get("Sprite"));
 				
 				
 			}
